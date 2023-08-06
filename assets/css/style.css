@@ -1,0 +1,150 @@
+* {
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Main container styling */
+.main-container {
+  width: 90%;
+  max-width: 800px;
+  background-color: rgb(241, 187, 241);
+  border: 3px solid purple;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+/* Countdown timer styles */
+#timer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: rgb(15, 117, 1);
+}
+
+/* Question styling */
+#question {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(135, 9, 194);
+}
+
+/* Answer buttons layout */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+  margin: 50px 0;
+}
+
+/* Answer buttons styles */
+.btn {
+  height: 100px;
+  width: 100%;
+  background-color: purple;
+  color: white;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+/* Start button styles */
+.start-btn {
+  height: 75px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: purple;
+  color: white;
+  font-size: 24px;
+}
+
+/* Controls container styles */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Button hover and active effects */
+button:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px black;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+/* Highscore section styles */
+.highscore {
+  text-align: center;
+  color: rgb(225, 152, 240);
+}
+
+.highscore p {
+  font-size: 18px;
+}
+
+/* Input styles for user initials */
+#initials {
+  background-color: rgb(67, 2, 104);
+  border-radius: 10px;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid rgb(138, 4, 150);
+  color: rgb(9, 167, 17);
+  font-size: 20px;
+}
+
+/* Submit button styles */
+#submit {
+  margin: 10px;
+  height: 50px;
+  width: 100px;
+  background-color: rgb(95, 6, 122);
+  border-radius: 10px;
+  color: rgb(245, 161, 248);
+  font-size: 20px;
+}
+
+/* Initials page styles */
+.initials-pg {
+  color: rgb(253, 183, 255);
+}
+
+/* Text score styles */
+.txt-score {
+  color: rgb(253, 184, 250);
+}
+
+/* Start container styles */
+.start-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+  height: 200px;
+  border: 5px solid purple;
+  background-color: pink;
+  border-radius: 25px;
+}
+
+/* Correct answer effect */
+body.correct {
+  background-color: green;
+}
