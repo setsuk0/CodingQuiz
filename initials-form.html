@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>My Coding Quiz</title>
+  </head>
+ 
+ 
+    <div class="main-container">
+     
+      <div class="highscore">
+        <h2 class="initials-pg">All done!</h2>
+        <p class="txt-score">Your Final Score: 
+          <span id="score" class="initials-pg">0</span>
+        </p>
+        
+        <input type="text" id="initials" placeholder="Initials Here" maxlength="2">
+        <div>
+          <button id="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+   <script>
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var score = urlParams.get('score')
+    var displayScore = document.getElementById("score");
+    displayScore.innerHTML = score
+
+    var submitBtn = document.getElementById("submit");
+
+    function saveToStorage() {
+
+      //a million different ways to save to local storage
+      var initials = document.getElementById("initials").value.trim();
+     
+      if(initials.length < 1) {
+        return;
+      }
+
+      var givenScore = score + " - " + initials;
+
+
+      var highScoresList = [];
+      if(localStorage.getItem("scores")) {
+        highScoresList = JSON.parse(localStorage.getItem("scores"))
+      }
+      highScoresList.push(givenScore);
+
+      localStorage.setItem("scores", JSON.stringify(highScoresList))
+
+      window.location = "./highscores.html";
+    }
+  
+    submitBtn.addEventListener("click", saveToStorage)
+  </script>
+  </body>
+</html>
