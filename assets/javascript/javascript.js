@@ -6,7 +6,7 @@ function shuffleAnswers(answers) {
   return answers;
 }
 
-// Array of new coding-related questions and answer options
+// Coding questions and answer options
 var myQuestions = [
   {
     question: "What is the purpose of HTML?",
@@ -55,7 +55,7 @@ var myQuestions = [
   },
 ];
 
-// Set the current page to the first question
+// first question
 var currentPage = 0;
 var score = 0;
 var secondsRemaining = 60;
@@ -64,7 +64,7 @@ var timer = document.getElementById("timer");
 
 timer.innerHTML = secondsRemaining + " seconds remaining";
 
-// Tick down seconds remaining
+// timer
 setInterval(function () {
   if (secondsRemaining > 0) {
     secondsRemaining -= 1;
@@ -91,7 +91,7 @@ function nextPage() {
   }
 }
 
-// Function to check user's answer
+// check the player's answers
 function checkAnswer(selectedAnswer) {
   var correct = myQuestions[currentPage].correct;
   var userAnswer = myQuestions[currentPage].answers[selectedAnswer];
@@ -102,7 +102,7 @@ function checkAnswer(selectedAnswer) {
     updateTimeRemaining();
   }
 
-  // If the current page is the last question, redirect to the high score page
+  // after the last question, this should go to the high score
   if (currentPage == myQuestions.length - 1) {
     window.location = "./initials-form.html?score=" + score;
   }
@@ -114,7 +114,7 @@ function updateTimeRemaining() {
   timer.innerHTML = secondsRemaining + " seconds remaining";
 }
 
-// When the window loads, go to the first page/question
+// loads the first page
 window.onload = function () {
   nextPage();
 };
